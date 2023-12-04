@@ -39,7 +39,7 @@ class Solution : DaySolution() {
                     right--
                 }
 
-                // check if next characters are digits
+                // check if next characters are not digits, it indicates we found full range
                 if (!foundLeft && chNextLeft?.isDigit() != true) {
                     foundLeft = true
                 }

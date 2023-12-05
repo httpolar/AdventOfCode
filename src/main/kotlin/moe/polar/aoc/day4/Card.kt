@@ -22,6 +22,15 @@ data class Card(val id: Int, val winningNumbers: List<Int>, val currentNumbers: 
 
             return pointCounter
         }
+
+    val matches: Int
+        get() = currentNumbers.fold(0) { acc: Int, id: Int ->
+            if (id in winningNumbers) {
+                acc + 1
+            } else {
+                acc
+            }
+        }
 }
 
 fun String.toCard(): Card {
